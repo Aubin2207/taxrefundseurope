@@ -1,0 +1,6 @@
+# robots.txt — EuroTax Refund
+
+User-agent: *
+Allow: /
+
+Sitemap: https://taxrefundseurope.netlify.app/sitemap.xml

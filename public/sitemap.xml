@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- Page d'accueil -->
+  <url>
+    <loc>https://taxrefundseurope.netlify.app/</loc>
+    <lastmod>2026-08-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Page Service : Remboursement Impôt France -->
+  <url>
+    <loc>https://taxrefundseurope.netlify.app/remboursement-impot-france</loc>
+    <lastmod>2026-08-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Page Service : Remboursement Impôt Expatrié & Non-Résident -->
+  <url>
+    <loc>https://taxrefundseurope.netlify.app/remboursement-impot-expatrie</loc>
+    <lastmod>2026-08-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Page Service : Récupération TVA Entreprise -->
+  <url>
+    <loc>https://taxrefundseurope.netlify.app/recuperation-tva-entreprise</loc>
+    <lastmod>2026-08-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Page Formulaire de demande -->
+  <url>
+    <loc>https://taxrefundseurope.netlify.app/form</loc>
+    <lastmod>2026-08-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>
