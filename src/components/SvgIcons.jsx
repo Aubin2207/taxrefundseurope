@@ -190,6 +190,15 @@ export const IconUpload = ({ size = 20, color = 'currentColor', ...props }) => (
     </svg>
 )
 
+export const IconFlagBe = ({ size = 20, ...props }) => (
+    <svg width={size} height={size} viewBox="0 0 24 24" {...props}>
+        <rect x="1" y="4" width="7.33" height="16" rx="1" fill="#000000" />
+        <rect x="8.33" y="4" width="7.34" height="16" fill="#FFD100" />
+        <rect x="15.67" y="4" width="7.33" height="16" rx="1" fill="#FF0F21" />
+        <rect x="1" y="4" width="22" height="16" rx="2" fill="none" stroke="rgba(255,255,255,0.15)" strokeWidth="0.5" />
+    </svg>
+)
+
 export const IconFlagFr = ({ size = 20, ...props }) => (
     <svg width={size} height={size} viewBox="0 0 24 24" {...props}>
         <rect x="1" y="4" width="7.33" height="16" rx="1" fill="#002395" />

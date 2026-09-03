@@ -1,11 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { IconBuilding, IconLock, IconFlagFr, IconFlagEu } from './SvgIcons'
+import { IconBuilding, IconLock, IconFlagBe, IconFlagEu } from './SvgIcons'
 
 export default function Footer() {
   const badges = [
     { icon: <IconLock size={12} />, label: 'SSL Sécurisé' },
-    { icon: <IconFlagFr size={12} />, label: 'Agrée Belgique' },
+    { icon: <IconFlagBe size={12} />, label: 'Agrée Belgique' },
     { icon: <IconFlagEu size={12} />, label: 'Union Européenne' },
   ]
 
