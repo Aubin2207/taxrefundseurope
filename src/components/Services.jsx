@@ -7,22 +7,22 @@ const SERVICES = [
     icon: <IconUser size={24} />,
     title: 'Particuliers & Salariés',
     link: '/remboursement-impot-france',
-    desc: 'Vérification et réclamation de votre trop-perçu d\'impôt sur le revenu, déductions oubliées, régularisation de prélèvement à la source excessif et crédits d\'impôt non appliqués.',
-    features: ['Trop-perçu impôt sur le revenu', 'Crédits d\'impôt non réclamés', 'Déductions en double', 'Retenue à la source excessive'],
+    desc: 'Vérification et réclamation de votre trop-perçu fiscal sur le revenu, déductions oubliées, régularisation de précompte professionnel excessif et crédits d\'impôt non appliqués.',
+    features: ['Trop-perçu fiscal sur le revenu', 'Déductions fiscales non réclamées', 'Charges de famille & quotient', 'Précompte professionnel excessif'],
   },
   {
     icon: <IconGlobe size={24} />,
     title: 'Expatriés & Non-Résidents',
     link: '/remboursement-impot-expatrie',
-    desc: 'Accompagnement dédié aux non-résidents, expatriés et travailleurs frontaliers pour faire valoir les conventions fiscales bilatérales et récupérer les impôts payés en France et en Europe.',
+    desc: 'Accompagnement dédié aux non-résidents, expatriés et travailleurs frontaliers pour faire valoir les conventions fiscales bilatérales et récupérer les impôts payés en Belgique et en Europe.',
     features: ['Remboursement fiscal multi-pays', 'Travailleurs frontaliers', 'Conventions fiscales bilatérales', 'Statut non-résident'],
   },
   {
     icon: <IconOffice size={24} />,
     title: 'Entreprises & PME',
     link: '/recuperation-tva-entreprise',
-    desc: 'Récupération et remboursement de TVA en France et en Europe, optimisation légale des crédits d\'impôt (CII) et régularisation des trop-perçus fiscaux pour les entreprises.',
-    features: ['Remboursement de TVA', 'Crédit Impôt Innovation (CII)', 'Optimisation fiscale légale', 'Dossiers transfrontaliers'],
+    desc: 'Récupération et remboursement de TVA en Belgique et en Europe, optimisation légale et régularisation des trop-perçus fiscaux pour les entreprises.',
+    features: ['Remboursement de TVA', 'Déplacements & salons professionnels', 'Optimisation fiscale légale', 'Dossiers transfrontaliers'],
   },
 ]
 
