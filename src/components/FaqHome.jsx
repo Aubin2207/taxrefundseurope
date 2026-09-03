@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { IconCheck } from './SvgIcons'
+import EligibilityModal from './EligibilityModal'
 
 const FAQ_HOME_QUESTIONS = [
   {
@@ -36,70 +37,71 @@ const FAQ_HOME_QUESTIONS = [
 ]
 
 export default function FaqHome() {
-  const [openIndex, setOpenIndex] = useState(null)
+  const [openId, setOpenId] = useState(null)
+  const [modalOpen, setModalOpen] = useState(false)
 
-  const toggleFaq = (index) => {
-    setOpenIndex(openIndex === index ? null : index)
+  const toggle = (id) => {
+    setOpenId(openId === id ? null : id)
   }
 
   return (
     <section id="faq" className="py-24 bg-white relative overflow-hidden border-t border-slate-100">
-      {/* Background Decor */}
-      <div className="absolute top-0 left-0 w-72 h-72 bg-brand-50 rounded-full blur-3xl -ml-36 -mt-36 opacity-50 pointer-events-none"></div>
-      <div className="absolute bottom-0 right-0 w-80 h-80 bg-gold-50 rounded-full blur-3xl -mr-40 -mb-40 opacity-50 pointer-events-none"></div>
+      {/* Eligibility Modal */}
+      <EligibilityModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
 
-      <div className="max-w-4xl mx-auto px-6 relative z-10">
-        {/* Header */}
-        <div className="text-center mb-16">
+      {/* Decorative Orbs */}
+      <div className="absolute top-0 right-1/4 w-96 h-96 bg-brand-50 rounded-full blur-3xl -z-10 opacity-60"></div>
+      <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-gold-50 rounded-full blur-3xl -z-10 opacity-60"></div>
+
+      <div className="max-w-4xl mx-auto px-6">
+        {/* Section Header */}
+        <div className="text-center mb-16 animate-fadeInUp">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-brand-50 text-brand-700 text-xs font-bold uppercase tracking-widest rounded-full mb-6 border border-brand-100 italic">
-            <span className="w-1.5 h-1.5 bg-brand-500 rounded-full"></span> FAQ & Réponses
+            <IconCheck size={14} /> Questions fréquentes
           </div>
           <h2 className="font-sora text-3xl md:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight leading-tight">
-            Questions fréquentes sur le <span className="text-brand-600">remboursement d'impôt</span>
+            Tout savoir sur le <span className="text-brand-600">remboursement d'impôt</span>
           </h2>
-          <p className="text-lg text-slate-500 leading-relaxed font-medium">
-            Retrouvez les réponses claires aux interrogations principales sur vos droits fiscaux et notre fonctionnement.
+          <p className="text-base md:text-lg text-slate-500 leading-relaxed font-medium">
+            Retrouvez les réponses aux questions les plus fréquentes sur nos services, notre méthode et vos droits fiscaux.
           </p>
         </div>
 
-        {/* Accordion list */}
-        <div className="space-y-4 mb-16" role="region" aria-label="Foire aux questions">
-          {FAQ_HOME_QUESTIONS.map((item, i) => {
-            const isOpen = openIndex === i
+        {/* FAQ Accordion List */}
+        <div className="space-y-4 mb-16">
+          {FAQ_HOME_QUESTIONS.map((item) => {
+            const isOpen = openId === item.id
             return (
               <div
                 key={item.id}
-                className={`border rounded-3xl transition-all duration-300 bg-white overflow-hidden ${isOpen ? 'border-brand-300 shadow-md shadow-brand-500/5' : 'border-slate-200 hover:border-slate-300'
-                  }`}
+                className={`border rounded-2xl md:rounded-3xl transition-all duration-300 overflow-hidden ${
+                  isOpen
+                    ? 'border-brand-300 bg-brand-50/20 shadow-md shadow-brand-500/5'
+                    : 'border-slate-200 bg-white hover:border-slate-300'
+                }`}
               >
                 <button
-                  type="button"
-                  onClick={() => toggleFaq(i)}
+                  onClick={() => toggle(item.id)}
+                  className="w-full text-left px-6 md:px-8 py-5 md:py-6 flex items-center justify-between gap-4 focus:outline-none"
                   aria-expanded={isOpen}
-                  aria-controls={`faq-answer-${item.id}`}
-                  id={`faq-question-${item.id}`}
-                  className="w-full text-left p-6 sm:p-7 flex justify-between items-center gap-4 transition-colors group focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 rounded-3xl"
                 >
-                  <span className="font-sora text-base sm:text-lg font-bold text-slate-900 group-hover:text-brand-600 transition-colors tracking-tight">
+                  <span className="font-sora font-bold text-slate-900 text-base md:text-lg tracking-tight">
                     {item.q}
                   </span>
                   <span
-                    className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 transition-all ${isOpen ? 'bg-brand-600 text-white rotate-180' : 'bg-slate-100 text-slate-500 group-hover:bg-brand-50 group-hover:text-brand-600'
-                      }`}
-                    aria-hidden="true"
+                    className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-base font-bold transition-transform duration-300 ${
+                      isOpen
+                        ? 'bg-brand-600 text-white rotate-45'
+                        : 'bg-slate-100 text-slate-600'
+                    }`}
                   >
-                    {isOpen ? '−' : '+'}
+                    +
                   </span>
                 </button>
 
                 {isOpen && (
-                  <div
-                    id={`faq-answer-${item.id}`}
-                    role="region"
-                    aria-labelledby={`faq-question-${item.id}`}
-                    className="px-6 sm:px-7 pb-7 pt-2 text-slate-600 text-sm leading-relaxed border-t border-slate-100 font-medium animate-fadeIn"
-                  >
-                    <p>{item.a}</p>
+                  <div className="px-6 md:px-8 pb-6 md:pb-8 pt-0 text-slate-600 text-sm md:text-base leading-relaxed border-t border-slate-100/80 mt-2 pt-4">
+                    {item.a}
                   </div>
                 )}
               </div>
@@ -117,12 +119,12 @@ export default function FaqHome() {
               Nos spécialistes vous répondent gratuitement et étudient vos possibilités de remboursement.
             </p>
           </div>
-          <Link
-            to="/form"
-            className="px-8 py-3.5 bg-brand-600 hover:bg-brand-500 text-white text-sm font-bold rounded-full transition-all whitespace-nowrap shadow-md shadow-brand-600/20 hover:shadow-brand-600/30"
+          <button
+            onClick={() => setModalOpen(true)}
+            className="px-8 py-3.5 bg-brand-600 hover:bg-brand-500 text-white text-sm font-bold rounded-full transition-all whitespace-nowrap shadow-md shadow-brand-600/20 hover:shadow-brand-600/30 cursor-pointer"
           >
             Vérifier mon éligibilité →
-          </Link>
+          </button>
         </div>
       </div>
     </section>

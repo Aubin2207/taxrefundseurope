@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { IconUser, IconGlobe, IconOffice, IconBank, IconRefresh, IconBolt, IconBriefcase, IconSearch, IconCheck } from './SvgIcons'
+import EligibilityModal from './EligibilityModal'
 
 const SERVICES = [
   {
@@ -27,85 +28,72 @@ const SERVICES = [
 ]
 
 export default function Services() {
+  const [modalOpen, setModalOpen] = useState(false)
+
   return (
-    <section id="services" className="py-24 bg-white relative overflow-hidden">
-      {/* Background with image overlay (Hero Style) */}
-      <div className="absolute inset-0 z-0">
-        <img
-          src="/images/pattern-bg.png"
-          alt=""
-          className="w-full h-full object-cover opacity-[0.08]"
-        />
-        <div className="absolute inset-0 bg-gradient-to-br from-white/90 via-white/95 to-brand-50/30"></div>
-      </div>
+    <section id="services" className="py-24 bg-slate-50 relative overflow-hidden">
+      {/* Eligibility Modal */}
+      <EligibilityModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
+
       {/* Background Decor */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-brand-50 rounded-full blur-3xl -mr-48 -mt-48 opacity-50"></div>
-      <div className="absolute bottom-0 left-0 w-64 h-64 bg-gold-50 rounded-full blur-3xl -ml-32 -mb-32 opacity-50"></div>
+      <div className="absolute top-0 right-0 w-96 h-96 bg-brand-100 rounded-full blur-3xl -mr-48 -mt-48 opacity-30"></div>
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-gold-100 rounded-full blur-3xl -ml-48 -mb-48 opacity-30"></div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-20">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-brand-50 text-brand-700 text-xs font-bold uppercase tracking-widest rounded-full mb-6 border border-brand-100">
-            <IconBriefcase size={14} /> Nos services
+        <div className="text-center max-w-3xl mx-auto mb-20 animate-fadeInUp">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-brand-50 text-brand-700 text-xs font-bold uppercase tracking-widest rounded-full mb-6 border border-brand-100 italic">
+            <IconBriefcase size={14} /> Solutions fiscales
           </div>
           <h2 className="font-sora text-4xl md:text-5xl font-extrabold text-slate-900 mb-6 tracking-tight leading-tight">
-            Nos solutions de <span className="text-brand-600">remboursement fiscal</span> sur mesure
+            Nos services de <span className="text-brand-600">remboursement fiscal</span>
           </h2>
-          <p className="text-lg text-slate-500 leading-relaxed">
-            Nos experts fiscaux analysent votre situation pour identifier l'ensemble des trop-perçus, crédits et déductions non réclamés, en France et dans toute l'Union Européenne.
+          <p className="text-lg text-slate-500 leading-relaxed font-medium">
+            Particuliers, expatriés ou entreprises : bénéficiez d'une expertise pointue pour maximiser votre récupération d'impôts en toute conformité.
           </p>
         </div>
 
-        {/* Cards Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {SERVICES.map((service, i) => (
+        <div className="grid md:grid-cols-3 gap-8 mb-16">
+          {SERVICES.map((s, i) => (
             <div
-              key={i}
-              className="group bg-white border border-slate-100 rounded-4xl p-10 transition-all duration-500 relative overflow-hidden flex flex-col justify-between"
+              key={s.title}
+              className="group bg-white border border-slate-100 rounded-4xl p-10 hover:border-brand-200 transition-all duration-500 flex flex-col justify-between"
             >
               <div>
-                <div className="w-14 h-14 flex items-center justify-center bg-gold-50 text-gold-600 rounded-2xl group-hover:bg-brand-600 group-hover:text-white transition-all duration-500 mb-8 border border-gold-100">
-                  {service.icon}
+                <div className="w-16 h-16 flex items-center justify-center bg-brand-50 text-brand-600 rounded-2xl mb-8 group-hover:bg-brand-600 group-hover:text-white transition-all duration-500">
+                  {s.icon}
                 </div>
-
-                <h3 className="font-sora text-xl font-bold text-slate-900 mb-4 group-hover:text-brand-700 transition-colors tracking-tight">
-                  <Link to={service.link} className="hover:underline">
-                    {service.title}
-                  </Link>
+                <h3 className="font-sora text-2xl font-bold text-slate-900 mb-4 tracking-tight group-hover:text-brand-600 transition-colors">
+                  {s.title}
                 </h3>
-
-                <p className="text-slate-500 text-sm leading-relaxed mb-8">
-                  {service.desc}
+                <p className="text-slate-500 text-sm leading-relaxed mb-8 font-medium">
+                  {s.desc}
                 </p>
-
-                <div className="space-y-3 mb-8">
-                  {service.features.map((feat, j) => (
-                    <div className="flex items-center gap-3 text-xs font-bold text-slate-700" key={j}>
-                      <div className="w-5 h-5 flex items-center justify-center bg-gold-50 text-gold-600 rounded-full border border-gold-100">
-                        <IconCheck size={10} />
-                      </div>
-                      {feat}
+                <div className="space-y-3 pt-6 border-t border-slate-50">
+                  {s.features.map((f, j) => (
+                    <div key={j} className="flex items-center gap-3 text-xs font-bold text-slate-600">
+                      <div className="w-1.5 h-1.5 bg-brand-500 rounded-full"></div>
+                      {f}
                     </div>
                   ))}
                 </div>
               </div>
 
-              <div className="pt-6 border-t border-slate-100 flex items-center justify-between">
+              <div className="pt-8">
                 <Link
-                  to={service.link}
-                  className="text-xs font-bold text-brand-600 hover:text-brand-700 flex items-center gap-1 group-hover:translate-x-1 transition-transform"
+                  to={s.link}
+                  className="inline-flex items-center gap-2 text-sm font-bold text-brand-600 hover:text-brand-700 group-hover:translate-x-1 transition-all"
                 >
-                  Découvrir le guide complet →
+                  En savoir plus →
                 </Link>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Bottom CTA Card */}
-        <div className="mt-20 p-10 bg-slate-950 rounded-5xl relative overflow-hidden text-center md:text-left">
-          {/* Decor */}
-          <div className="absolute top-0 right-0 w-64 h-64 bg-brand-500/10 rounded-full blur-3xl -mr-32 -mt-32"></div>
+        {/* CTA banner inside services */}
+        <div className="bg-slate-950 rounded-4xl p-12 relative overflow-hidden text-center md:text-left">
+          {/* Decorative background orb */}
+          <div className="absolute top-0 right-0 w-80 h-80 bg-brand-600/10 rounded-full blur-3xl -mr-20 -mt-20"></div>
 
           <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="max-w-xl">
@@ -121,12 +109,12 @@ export default function Services() {
               </p>
             </div>
 
-            <Link
-              to="/form"
-              className="px-10 py-5 bg-brand-600 hover:bg-brand-500 text-white font-bold rounded-full transition-all whitespace-nowrap"
+            <button
+              onClick={() => setModalOpen(true)}
+              className="px-10 py-5 bg-brand-600 hover:bg-brand-500 text-white font-bold rounded-full transition-all whitespace-nowrap shadow-lg shadow-brand-600/30 hover:scale-105 cursor-pointer"
             >
               Vérifier mon éligibilité gratuitement →
-            </Link>
+            </button>
           </div>
         </div>
       </div>

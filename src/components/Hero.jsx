@@ -32,9 +32,9 @@ export default function Hero() {
           </div>
 
           <h1 className="font-sora text-5xl md:text-7xl font-extrabold text-slate-900 leading-[1.1] mb-8 tracking-tight">
-            Remboursement d'impôt : <br />
-            <span className="bg-gradient-to-r from-brand-600 to-gold-500 bg-clip-text text-transparent">récupérez vos impôts</span> <br />
-            en France et en Europe
+            Remboursement des <br />
+            <span className="bg-gradient-to-r from-brand-600 to-gold-500 bg-clip-text text-transparent">trop-perçus fiscaux</span> <br />
+            en Belgique et en Europe
           </h1>
 
           <p className="text-lg text-slate-500 leading-relaxed mb-10 max-w-2xl font-medium">
