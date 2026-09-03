@@ -96,7 +96,7 @@ export default function Services() {
                 <span className="font-bold uppercase tracking-widest text-xs">Analyse personnalisée</span>
               </div>
               <p className="font-sora text-2xl md:text-3xl font-extrabold text-white mb-4 tracking-tight">
-                Prêt à récupérer votre trop-perçu d'impôt ?
+                Prêt à récupérer votre trop-perçu fiscal ?
               </p>
               <p className="text-slate-400 font-medium">
                 Remplissez notre questionnaire en 2 minutes. Analyse gratuite de votre dossier sous 24h.

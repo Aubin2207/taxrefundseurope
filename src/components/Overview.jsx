@@ -61,9 +61,9 @@ export default function Overview() {
 
             <p className="text-lg text-slate-500 mb-10 leading-relaxed">
               Chez EuroTax Refund, nous aidons particuliers, expatriés et entreprises à récupérer
-              les impôts et trop-perçus payés à l'État. Notre équipe analyse chaque
+              les impôts et trop-perçus fiscaux payés à l'État. Notre équipe analyse chaque
               dossier pour optimiser votre remboursement, dans le strict respect de la
-              législation française et européenne.
+              législation belge, française et européenne.
             </p>
 
             <div className="space-y-6 mb-12">

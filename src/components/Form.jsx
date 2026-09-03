@@ -158,7 +158,7 @@ EUROTAX REFUND (Belgique & Europe)
 • Statut professionnel : ${formData.employmentStatus}
 • Revenus annuels bruts estimés : ${formData.estimatedIncome ? formData.estimatedIncome + ' €' : 'Non précisé'}
 
-3. MOTIFS DU TROP-PERÇU DÉCLARÉS
+3. MOTIFS DU TROP-PERÇU FISCAL DÉCLARÉS
 -----------------------------------------
 ${situations.length > 0 ? situations.join('\n') : '• Audit général d’optimisation fiscale'}
 
