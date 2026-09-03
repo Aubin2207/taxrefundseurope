@@ -56,7 +56,7 @@ export default function Overview() {
             </div>
 
             <h2 className="font-sora text-4xl md:text-5xl font-extrabold text-slate-900 mb-8 tracking-tight leading-tight">
-              Votre spécialiste de la <span className="text-brand-600">récupération d'impôts</span> en France et en Europe
+              Votre spécialiste de la <span className="text-brand-600">récupération d'impôts</span> en Belgique et en Europe
             </h2>
 
             <p className="text-lg text-slate-500 mb-10 leading-relaxed">

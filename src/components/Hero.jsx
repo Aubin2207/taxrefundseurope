@@ -28,12 +28,12 @@ export default function Hero() {
         <div className="animate-fadeInUp">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-brand-50 border border-brand-100 rounded-full mb-8">
             <span className="w-2 h-2 bg-brand-500 rounded-full animate-pulse-dot"></span>
-            <span className="text-xs font-bold text-brand-700 uppercase tracking-widest">Accompagnement fiscal – France & Europe</span>
+            <span className="text-xs font-bold text-brand-700 uppercase tracking-widest">Accompagnement fiscal – Belgique & Europe</span>
           </div>
 
           <h1 className="font-sora text-5xl md:text-7xl font-extrabold text-slate-900 leading-[1.1] mb-8 tracking-tight">
             Remboursement des <br />
-            <span className="bg-gradient-to-r from-brand-600 to-gold-500 bg-clip-text text-transparent">trop-perçus fiscaux</span> <br />
+            <span className="bg-gradient-to-r from-brand-600 to-gold-500 bg-clip-text text-transparent">trop-perçus et impôts</span> <br />
             en Belgique et en Europe
           </h1>
 
