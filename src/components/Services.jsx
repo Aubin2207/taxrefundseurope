@@ -1,7 +1,6 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
-import { IconUser, IconGlobe, IconOffice, IconBank, IconRefresh, IconBolt, IconBriefcase, IconSearch, IconCheck } from './SvgIcons'
-import EligibilityModal from './EligibilityModal'
+import { IconUser, IconGlobe, IconOffice, IconBriefcase, IconSearch } from './SvgIcons'
 
 const SERVICES = [
   {
@@ -28,13 +27,8 @@ const SERVICES = [
 ]
 
 export default function Services() {
-  const [modalOpen, setModalOpen] = useState(false)
-
   return (
     <section id="services" className="py-24 bg-slate-50 relative overflow-hidden">
-      {/* Eligibility Modal */}
-      <EligibilityModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
-
       {/* Background Decor */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-brand-100 rounded-full blur-3xl -mr-48 -mt-48 opacity-30"></div>
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-gold-100 rounded-full blur-3xl -ml-48 -mb-48 opacity-30"></div>
@@ -53,7 +47,7 @@ export default function Services() {
         </div>
 
         <div className="grid md:grid-cols-3 gap-8 mb-16">
-          {SERVICES.map((s, i) => (
+          {SERVICES.map((s) => (
             <div
               key={s.title}
               className="group bg-white border border-slate-100 rounded-4xl p-10 hover:border-brand-200 transition-all duration-500 flex flex-col justify-between"
@@ -102,19 +96,19 @@ export default function Services() {
                 <span className="font-bold uppercase tracking-widest text-xs">Analyse personnalisée</span>
               </div>
               <p className="font-sora text-2xl md:text-3xl font-extrabold text-white mb-4 tracking-tight">
-                Vous souhaitez vérifier votre éligibilité ?
+                Prêt à récupérer votre trop-perçu d'impôt ?
               </p>
               <p className="text-slate-400 font-medium">
-                Obtenez une analyse gratuite de votre dossier sous 24h. Aucun frais si nous n'obtenons rien.
+                Remplissez notre questionnaire en 2 minutes. Analyse gratuite de votre dossier sous 24h.
               </p>
             </div>
 
-            <button
-              onClick={() => setModalOpen(true)}
-              className="px-10 py-5 bg-brand-600 hover:bg-brand-500 text-white font-bold rounded-full transition-all whitespace-nowrap shadow-lg shadow-brand-600/30 hover:scale-105 cursor-pointer"
+            <Link
+              to="/form"
+              className="px-10 py-5 bg-brand-600 hover:bg-brand-500 text-white font-bold rounded-full transition-all whitespace-nowrap shadow-lg shadow-brand-600/30 hover:scale-105"
             >
-              Vérifier mon éligibilité gratuitement →
-            </button>
+              Démarrer ma demande →
+            </Link>
           </div>
         </div>
       </div>

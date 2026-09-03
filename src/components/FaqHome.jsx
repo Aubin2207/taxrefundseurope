@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { IconCheck } from './SvgIcons'
-import EligibilityModal from './EligibilityModal'
 
 const FAQ_HOME_QUESTIONS = [
   {
@@ -38,7 +37,6 @@ const FAQ_HOME_QUESTIONS = [
 
 export default function FaqHome() {
   const [openId, setOpenId] = useState(null)
-  const [modalOpen, setModalOpen] = useState(false)
 
   const toggle = (id) => {
     setOpenId(openId === id ? null : id)
@@ -46,9 +44,6 @@ export default function FaqHome() {
 
   return (
     <section id="faq" className="py-24 bg-white relative overflow-hidden border-t border-slate-100">
-      {/* Eligibility Modal */}
-      <EligibilityModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
-
       {/* Decorative Orbs */}
       <div className="absolute top-0 right-1/4 w-96 h-96 bg-brand-50 rounded-full blur-3xl -z-10 opacity-60"></div>
       <div className="absolute bottom-0 left-1/4 w-96 h-96 bg-gold-50 rounded-full blur-3xl -z-10 opacity-60"></div>
@@ -119,12 +114,12 @@ export default function FaqHome() {
               Nos spécialistes vous répondent gratuitement et étudient vos possibilités de remboursement.
             </p>
           </div>
-          <button
-            onClick={() => setModalOpen(true)}
-            className="px-8 py-3.5 bg-brand-600 hover:bg-brand-500 text-white text-sm font-bold rounded-full transition-all whitespace-nowrap shadow-md shadow-brand-600/20 hover:shadow-brand-600/30 cursor-pointer"
+          <Link
+            to="/form"
+            className="px-8 py-3.5 bg-brand-600 hover:bg-brand-500 text-white text-sm font-bold rounded-full transition-all whitespace-nowrap shadow-md shadow-brand-600/20 hover:shadow-brand-600/30"
           >
-            Vérifier mon éligibilité →
-          </button>
+            Démarrer ma demande →
+          </Link>
         </div>
       </div>
     </section>
