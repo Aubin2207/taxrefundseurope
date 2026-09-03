@@ -60,7 +60,7 @@ const HOME_SCHEMA = {
       'url': 'https://taxrefundseurope.netlify.app/',
       'logo': 'https://taxrefundseurope.netlify.app/images/logo.jpeg',
       'email': 'contact.taxrefunds@gmail.com',
-      'description': "Accompagnement en remboursement fiscal et récupération d'impôts en France et en Europe pour particuliers, expatriés et entreprises."
+      'description': "Accompagnement en remboursement fiscal et récupération d'impôts en Belgique et en Europe pour particuliers, expatriés et entreprises."
     },
     {
       '@type': 'WebSite',
@@ -70,18 +70,18 @@ const HOME_SCHEMA = {
       'publisher': {
         '@id': 'https://taxrefundseurope.netlify.app/#organization'
       },
-      'inLanguage': 'fr-FR'
+      'inLanguage': 'fr-BE'
     },
     {
       '@type': 'WebPage',
       '@id': 'https://taxrefundseurope.netlify.app/#webpage',
       'url': 'https://taxrefundseurope.netlify.app/',
-      'name': 'EuroTax Refund | Récupérez vos impôts en Europe',
-      'description': "EuroTax Refund vous aide à récupérer vos impôts payés en France et en Europe. Analyse gratuite en 24h pour particuliers, expatriés et entreprises. Sans frais si nous n'obtenons rien.",
+      'name': 'EuroTax Refund | Récupérez vos trop-perçus fiscaux en Belgique et en Europe',
+      'description': "EuroTax Refund vous aide à récupérer vos trop-perçus fiscaux payés en Belgique et en Europe. Analyse gratuite en 24h pour particuliers, expatriés et entreprises. Sans frais si nous n'obtenons rien.",
       'isPartOf': {
         '@id': 'https://taxrefundseurope.netlify.app/#website'
       },
-      'inLanguage': 'fr-FR'
+      'inLanguage': 'fr-BE'
     },
     {
       '@type': 'FAQPage',
@@ -108,7 +108,7 @@ const HOME_SCHEMA = {
           'name': "Quels documents dois-je fournir pour démarrer ?",
           'acceptedAnswer': {
             '@type': 'Answer',
-            'text': "Les pièces justificatives dépendent de votre profil fiscal (particulier, salarié, expatrié ou entreprise). Pour une première étude, vos avis d'imposition récents ou récapitulatifs de revenus suffisent. Si des pièces complémentaires sont nécessaires, elles vous seront précisées lors de l'instruction."
+            'text': "Les pièces justificatives dépendent de votre profil fiscal (particulier, salarié, expatrié ou entreprise). Pour une première étude, vos avertissements-extraits de rôle récents ou récapitulatifs de revenus suffisent. Si des pièces complémentaires sont nécessaires, elles vous seront précisées lors de l'instruction."
           }
         },
         {
@@ -116,7 +116,7 @@ const HOME_SCHEMA = {
           'name': "Qui peut faire une demande auprès d'EuroTax Refund ?",
           'acceptedAnswer': {
             '@type': 'Answer',
-            'text': "Notre accompagnement est ouvert aux particuliers et salariés, aux travailleurs frontaliers, aux expatriés et non-résidents, ainsi qu'aux entreprises (PME, TPE, indépendants) ayant cotisé ou payé de la TVA en France et dans l'Union Européenne."
+            'text': "Notre accompagnement est ouvert aux particuliers et salariés, aux travailleurs frontaliers, aux expatriés et non-résidents, ainsi qu'aux entreprises (PME, TPE, indépendants) ayant cotisé ou payé de la TVA en Belgique et dans l'Union Européenne."
           }
         },
         {
@@ -142,8 +142,8 @@ const HOME_SCHEMA = {
 
 function Home() {
   usePageSEO({
-    title: 'EuroTax Refund | Récupérez vos impôts en Europe',
-    description: "EuroTax Refund vous aide à récupérer vos impôts payés en France et en Europe. Analyse gratuite en 24h pour particuliers, expatriés et entreprises. Sans frais si nous n'obtenons rien.",
+    title: 'EuroTax Refund | Récupérez vos trop-perçus et impôts en Belgique et en Europe',
+    description: "EuroTax Refund vous aide à récupérer vos trop-perçus fiscaux payés en Belgique et en Europe. Analyse gratuite en 24h pour particuliers, expatriés et entreprises. Sans frais si nous n'obtenons rien.",
     canonicalPath: '/',
     schema: HOME_SCHEMA
   })

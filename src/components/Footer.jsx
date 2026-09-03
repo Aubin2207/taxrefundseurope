@@ -5,7 +5,7 @@ import { IconBuilding, IconLock, IconFlagFr, IconFlagEu } from './SvgIcons'
 export default function Footer() {
   const badges = [
     { icon: <IconLock size={12} />, label: 'SSL Sécurisé' },
-    { icon: <IconFlagFr size={12} />, label: 'Agrée France' },
+    { icon: <IconFlagFr size={12} />, label: 'Agrée Belgique' },
     { icon: <IconFlagEu size={12} />, label: 'Union Européenne' },
   ]
 
@@ -27,7 +27,7 @@ export default function Footer() {
               </span>
             </Link>
             <p className="text-sm leading-relaxed mb-10 text-slate-500 font-medium">
-              Votre partenaire de confiance pour le remboursement fiscal en France et en Europe.
+              Votre partenaire de confiance pour le remboursement fiscal en Belgique et en Europe.
               Accompagnement d'experts, sans aucun frais si nous n'obtenons rien.
             </p>
             <div className="flex flex-wrap gap-2">

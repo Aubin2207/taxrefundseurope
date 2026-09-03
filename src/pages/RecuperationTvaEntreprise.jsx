@@ -6,49 +6,39 @@ import { usePageSEO } from '../hooks/usePageSEO'
 import {
   IconOffice, IconSearch, IconCheck, IconShield,
   IconMoney, IconClipboard, IconBriefcase, IconArrowLeft,
-  IconBuilding, IconTarget
+  IconBuilding, IconGlobe, IconTarget
 } from '../components/SvgIcons'
 
 const FAQ_ITEMS = [
   {
     id: 'tva-1',
-    q: "Une entreprise peut-elle récupérer de la TVA payée à l'étranger ?",
-    a: "Oui. En vertu de la directive européenne 2008/9/CE, une entreprise établie dans un État membre de l'Union Européenne peut demander le remboursement de la TVA locale supportée dans un autre pays européen où elle n'est pas immatriculée, sous réserve du respect des conditions de déductibilité de cet État."
+    q: "Une entreprise peut-elle récupérer la TVA payée dans un autre pays européen ?",
+    a: "Oui. En vertu de la directive européenne 2008/9/CE (procédure TVA 8e et 9e Directive), une entreprise assujettie établie dans l'UE peut réclamer le remboursement de la TVA professionnelle supportée dans un autre État membre."
   },
   {
     id: 'tva-2',
-    q: "Quelles dépenses professionnelles peuvent être concernées ?",
-    a: "Sont principalement éligibles les frais de salons professionnels, foires et expositions, les hébergements d'équipes (selon le pays), les prestations de sous-traitance et de conseil, les frais de carburant et péages autoroutiers, ainsi que certains achats de matériel d'exploitation."
+    q: "Quelles sont les dépenses professionnelles ouvrant droit à récupération de TVA ?",
+    a: "Les frais les plus fréquents sont : hébergement hôtelier et restauration pour déplacements professionnels, participation à des foires, salons et conférences, carburant et péages, location de véhicules utilitaires ou de stands, et honoraires de sous-traitance locale."
   },
   {
     id: 'tva-3',
-    q: "La TVA est-elle récupérable dans tous les pays européens ?",
-    a: "Le principe existe dans les 27 pays de l'Union Européenne ainsi que dans plusieurs pays tiers (Royaume-Uni, Suisse, Norvège sous conditions de réciprocité). Toutefois, les règles d'exclusion de certaines dépenses varient d'un pays à l'autre."
+    q: "Quelles sont les conditions de forme pour les factures ?",
+    a: "La facture doit être libellée au nom exact de l'entreprise, comporter son numéro de TVA intracommunautaire, la date, le détail HT/TVA/TTC et être conforme aux mentions obligatoires du pays émetteur."
   },
   {
     id: 'tva-4',
-    q: "Quels justificatifs et mentions sur facture sont indispensables ?",
-    a: "Les factures doivent être libellées au nom exact de votre société et comporter les mentions obligatoires : numéros de TVA intracommunautaire du fournisseur et de votre entreprise, adresse complète, description des biens/services et montants HT, taux et TVA détaillée."
+    q: "Quels sont les seuils et délais pour déposer une demande de remboursement de TVA ?",
+    a: "La demande doit être déposée par voie électronique au plus tard le 30 septembre de l'année civile suivant la période de facturation. Des seuils minimaux de TVA s'appliquent selon que la demande est trimestrielle ou annuelle."
   },
   {
     id: 'tva-5',
-    q: "Une PME ou TPE peut-elle demander une récupération de TVA ?",
-    a: "Oui. Toute entreprise assujettie à la TVA (PME, TPE, ETI ou travailleur indépendant) peut introduire une demande de remboursement dès lors que le montant de TVA étrangère atteint les seuils légaux minimaux."
+    q: "EuroTax Refund s'occupe-t-il de l'ensemble des démarches pour les entreprises ?",
+    a: "Oui. Nous effectuons l'audit de vos factures, la vérification de conformité, la saisie et le dépôt des dossiers sur les portails fiscaux compétents, ainsi que le suivi des échanges jusqu'au virement des fonds."
   },
   {
     id: 'tva-6',
-    q: "Comment fonctionne l'analyse du dossier par EuroTax Refund ?",
-    a: "Nos spécialistes réalisent un audit gratuit de vos pièces comptables, contrôlent la conformité des factures, calculent la TVA éligible par juridiction et préparent le dossier administratif de réclamation."
-  },
-  {
-    id: 'tva-7',
-    q: "Combien coûte l'accompagnement pour la récupération de TVA ?",
-    a: "L'analyse préalable de vos factures est entièrement sans frais. Notre rémunération repose exclusivement sur une commission au succès calculée sur les sommes effectivement recouvrées pour le compte de votre entreprise."
-  },
-  {
-    id: 'tva-8',
-    q: "Quel est le délai de traitement pour un remboursement de TVA européenne ?",
-    a: "La réglementation européenne prévoit un délai d'instruction moyen de 4 à 8 mois selon que l'administration fiscale étrangère sollicite ou non des pièces complémentaires. Nous assurons le suivi des échanges jusqu'au versement."
+    q: "Comment fonctionne la rémunération d'EuroTax Refund pour les entreprises ?",
+    a: "Nos honoraires sont 100 % indexés sur le résultat : vous ne réglez un pourcentage qu'une fois la TVA effectivement remboursée et créditée sur le compte bancaire de votre entreprise."
   }
 ]
 
@@ -59,67 +49,20 @@ const TVA_SCHEMA = {
       '@type': 'WebPage',
       '@id': 'https://taxrefundseurope.netlify.app/recuperation-tva-entreprise#webpage',
       'url': 'https://taxrefundseurope.netlify.app/recuperation-tva-entreprise',
-      'name': 'Récupération de TVA entreprise en Europe | EuroTax Refund',
-      'description': "Récupérez la TVA professionnelle payée en France et dans l'Union Européenne. Analyse gratuite de vos factures et démarches simplifiées pour votre entreprise.",
+      'name': 'Récupération de TVA entreprise en Belgique et en Europe | EuroTax Refund',
+      'description': "Récupérez la TVA professionnelle payée en Belgique et dans l'Union Européenne. Analyse gratuite de vos factures et démarches simplifiées pour votre entreprise.",
       'isPartOf': {
         '@id': 'https://taxrefundseurope.netlify.app/#website'
       },
-      'inLanguage': 'fr-FR'
-    },
-    {
-      '@type': 'BreadcrumbList',
-      '@id': 'https://taxrefundseurope.netlify.app/recuperation-tva-entreprise#breadcrumb',
-      'itemListElement': [
-        {
-          '@type': 'ListItem',
-          'position': 1,
-          'name': 'Accueil',
-          'item': 'https://taxrefundseurope.netlify.app/'
-        },
-        {
-          '@type': 'ListItem',
-          'position': 2,
-          'name': 'Récupération TVA Entreprise',
-          'item': 'https://taxrefundseurope.netlify.app/recuperation-tva-entreprise'
-        }
-      ]
-    },
-    {
-      '@type': 'Service',
-      '@id': 'https://taxrefundseurope.netlify.app/recuperation-tva-entreprise#service',
-      'name': 'Récupération de TVA pour les entreprises en France et en Europe',
-      'serviceType': 'Remboursement de TVA intracommunautaire et professionnelle',
-      'description': "Audit des factures professionnelles et gestion des demandes de remboursement de TVA supportée dans l'Union Européenne (Directive 2008/9/CE).",
-      'provider': {
-        '@type': 'Organization',
-        '@id': 'https://taxrefundseurope.netlify.app/#organization',
-        'name': 'EuroTax Refund',
-        'url': 'https://taxrefundseurope.netlify.app/'
-      },
-      'areaServed': {
-        '@type': 'AdministrativeArea',
-        'name': 'Union Européenne'
-      }
-    },
-    {
-      '@type': 'FAQPage',
-      '@id': 'https://taxrefundseurope.netlify.app/recuperation-tva-entreprise#faq',
-      'mainEntity': FAQ_ITEMS.map(item => ({
-        '@type': 'Question',
-        'name': item.q,
-        'acceptedAnswer': {
-          '@type': 'Answer',
-          'text': item.a
-        }
-      }))
+      'inLanguage': 'fr-BE'
     }
   ]
 }
 
 export default function RecuperationTvaEntreprise() {
   usePageSEO({
-    title: "Récupération de TVA entreprise en Europe | EuroTax Refund",
-    description: "Récupérez la TVA professionnelle payée en France et dans l'Union Européenne. Analyse gratuite de vos factures et démarches simplifiées pour votre entreprise.",
+    title: "Récupération de TVA entreprise en Belgique et en Europe | EuroTax Refund",
+    description: "Récupérez la TVA professionnelle payée en Belgique et dans l'Union Européenne. Analyse gratuite de vos factures et démarches simplifiées pour votre entreprise.",
     canonicalPath: "/recuperation-tva-entreprise",
     schema: TVA_SCHEMA
   })
@@ -132,7 +75,6 @@ export default function RecuperationTvaEntreprise() {
 
       {/* HERO SECTION */}
       <section className="relative pt-36 pb-20 overflow-hidden bg-white">
-        {/* Background Overlay */}
         <div className="absolute inset-0 z-0 pointer-events-none">
           <img
             src="/images/hero-bg.webp"
@@ -147,7 +89,6 @@ export default function RecuperationTvaEntreprise() {
         </div>
 
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          {/* Breadcrumb */}
           <nav className="flex items-center gap-2 text-xs font-bold text-slate-400 mb-8 uppercase tracking-widest">
             <Link to="/" className="hover:text-brand-600 transition-colors">Accueil</Link>
             <span>/</span>
@@ -163,7 +104,7 @@ export default function RecuperationTvaEntreprise() {
             <h1 className="font-sora text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-[1.15] mb-8 tracking-tight">
               Récupération de TVA pour les <br />
               <span className="bg-gradient-to-r from-brand-600 to-gold-500 bg-clip-text text-transparent">
-                entreprises en France et en Europe
+                entreprises en Belgique et en Europe
               </span>
             </h1>
 
@@ -176,7 +117,7 @@ export default function RecuperationTvaEntreprise() {
                 to="/form"
                 className="px-8 py-4 bg-brand-600 hover:bg-brand-500 text-white font-bold rounded-full transition-all shadow-lg shadow-brand-600/25 hover:shadow-brand-600/40 hover:-translate-y-0.5"
               >
-                Vérifier mon éligibilité entreprise →
+                Démarrer ma demande →
               </Link>
               <a
                 href="#tva-principe"
@@ -197,10 +138,10 @@ export default function RecuperationTvaEntreprise() {
               Règles fondamentales
             </span>
             <h2 className="font-sora text-3xl md:text-4xl font-extrabold text-slate-900 mb-6 tracking-tight">
-              Qu'est-ce que la récupération de TVA professionnelle ?
+              Qu'est-ce que la récupération de TVA professionnelle en Europe ?
             </h2>
             <p className="text-slate-600 leading-relaxed font-medium">
-              La taxe sur la valeur ajoutée étant un impôt sur la consommation finale, les entreprises assujetties ont le droit de déduire la TVA ayant grevé leurs dépenses d'exploitation.
+              Toute entreprise établie en Belgique ou dans l'Union Européenne ayant supporté de la TVA sur des dépenses d'exploitation dans un autre État membre peut en demander la restitution.
             </p>
           </div>
 
@@ -210,243 +151,22 @@ export default function RecuperationTvaEntreprise() {
                 <IconMoney size={24} />
               </div>
               <h3 className="font-sora text-xl font-bold text-slate-900 mb-4 tracking-tight">
-                Le principe de déductibilité de la TVA
+                La directive européenne 2008/9/CE
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed mb-4">
-                Une entreprise collecte la TVA sur ses ventes et déduit celle payée sur ses achats professionnels. Lorsque la TVA déductible est supérieure à la TVA collectée, l'entreprise dégage un <strong>crédit de TVA</strong> auprès du Trésor public.
-              </p>
-              <p className="text-slate-500 text-xs font-medium">
-                Ce crédit peut soit être imputé sur les déclarations futures, soit faire l'objet d'un remboursement direct sur le compte bancaire de la société.
+                Ce cadre juridique européen garantit la neutralité de la TVA pour les entreprises. Les dépenses de représentation, transport et salons professionnels ne doivent pas grever la rentabilité des sociétés actives à l'international.
               </p>
             </div>
 
             <div className="bg-white p-8 rounded-3xl border border-slate-200 shadow-sm">
               <div className="w-12 h-12 flex items-center justify-center bg-gold-50 text-gold-600 rounded-2xl mb-6">
-                <IconOffice size={24} />
+                <IconShield size={24} />
               </div>
               <h3 className="font-sora text-xl font-bold text-slate-900 mb-4 tracking-tight">
-                La TVA supportée à l'étranger (Union Européenne)
+                Accompagnement 100 % sécurisé
               </h3>
               <p className="text-slate-600 text-sm leading-relaxed mb-4">
-                Si votre entreprise n'est pas immatriculée à la TVA dans le pays européen où la dépense a eu lieu, cette TVA ne peut pas être déduite sur votre déclaration locale ordinaire. Elle doit faire l'objet d'une demande spécifique de remboursement transfrontalier via la directive européenne 2008/9/CE.
-              </p>
-              <p className="text-slate-500 text-xs font-medium">
-                De nombreuses entreprises négligent cette opportunité et traitent ces montants comme une charge nette.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 2 : SITUATIONS ÉLIGIBLES */}
-      <section className="py-20 bg-white relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-xs font-bold uppercase tracking-widest text-brand-600 bg-brand-50 px-3 py-1 rounded-full inline-block mb-4 border border-brand-100">
-              Opportunités d'optimisation
-            </span>
-            <h2 className="font-sora text-3xl md:text-4xl font-extrabold text-slate-900 mb-6 tracking-tight">
-              Dans quelles situations une entreprise peut-elle récupérer de la TVA ?
-            </h2>
-            <p className="text-slate-600 leading-relaxed font-medium">
-              L'éligibilité dépend de la nature des opérations réalisées et de la conformité des pièces comptables.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              {
-                title: "Salons & congrès européens",
-                desc: "Frais d'inscription, location de stand, hébergement d'équipes et prestations événementielles supportés dans un autre État de l'UE."
-              },
-              {
-                title: "Missions & déplacements professionnels",
-                desc: "Frais de restauration d'affaires, carburant, péages et transports engagés lors de missions commerciales à l'international."
-              },
-              {
-                title: "Activités d'exportation",
-                desc: "Entreprises réalisant des livraisons intracommunautaires ou exportations exonérées, générant un crédit de TVA structurel."
-              },
-              {
-                title: "Investissements matériels",
-                desc: "Acquisition de machines, outils industriels ou prestations informatiques ayant généré un volume important de taxe déductible."
-              }
-            ].map((card, i) => (
-              <div key={i} className="bg-slate-50 p-8 rounded-3xl border border-slate-100 hover:border-brand-200 transition-all">
-                <div className="w-10 h-10 flex items-center justify-center bg-brand-600 text-white font-bold rounded-xl mb-6">
-                  0{i + 1}
-                </div>
-                <h3 className="font-sora text-lg font-bold text-slate-900 mb-3 tracking-tight">
-                  {card.title}
-                </h3>
-                <p className="text-slate-600 text-xs leading-relaxed font-medium">
-                  {card.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 3 : DÉPENSES CONCERNÉES */}
-      <section className="py-20 bg-slate-950 text-white relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="max-w-3xl mb-16">
-            <span className="text-xs font-bold uppercase tracking-widest text-gold-400 bg-white/5 px-3 py-1 rounded-full inline-block mb-4 border border-white/10">
-              Typologie des frais
-            </span>
-            <h2 className="font-sora text-3xl md:text-4xl font-extrabold text-white mb-6 tracking-tight">
-              Quelles sont les dépenses professionnelles concernées ?
-            </h2>
-            <p className="text-slate-400 leading-relaxed font-medium">
-              Chaque pays européen applique ses propres conditions de déductibilité selon la catégorie de dépense.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white/5 border border-white/10 p-8 rounded-3xl">
-              <h3 className="font-sora text-xl font-bold text-white mb-4 tracking-tight">
-                Événements & salons internationaux
-              </h3>
-              <p className="text-slate-400 text-sm leading-relaxed mb-6">
-                Location d'emplacements, aménagement de stands, prestations techniques, hôtesses et billets d'accès lors des foires et expositions en Europe.
-              </p>
-              <div className="flex items-center gap-2 text-xs text-brand-400 font-bold">
-                <IconCheck size={16} /> Récupérable dans la majorité des pays de l'UE
-              </div>
-            </div>
-
-            <div className="bg-white/5 border border-white/10 p-8 rounded-3xl">
-              <h3 className="font-sora text-xl font-bold text-white mb-4 tracking-tight">
-                Prestations & sous-traitance
-              </h3>
-              <p className="text-slate-400 text-sm leading-relaxed mb-6">
-                Services de conseil, marketing, maintenance sur site, formation ou études techniques facturés avec de la TVA locale par des prestataires européens.
-              </p>
-              <div className="flex items-center gap-2 text-xs text-gold-400 font-bold">
-                <IconCheck size={16} /> Analyse de la conformité des factures
-              </div>
-            </div>
-
-            <div className="bg-white/5 border border-white/10 p-8 rounded-3xl">
-              <h3 className="font-sora text-xl font-bold text-white mb-4 tracking-tight">
-                Déplacements & logistique
-              </h3>
-              <p className="text-slate-400 text-sm leading-relaxed mb-6">
-                Carburant (gazole, électricité), péages autoroutiers, parkings professionnels et restauration commerciale selon les règles de déduction de l'État émetteur.
-              </p>
-              <div className="flex items-center gap-2 text-xs text-brand-400 font-bold">
-                <IconCheck size={16} /> Éligibilité selon barèmes locaux
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 4 : MÉTHODE ET ACCOMPAGNEMENT */}
-      <section className="py-20 bg-white relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-xs font-bold uppercase tracking-widest text-brand-600 bg-brand-50 px-3 py-1 rounded-full inline-block mb-4 border border-brand-100">
-              Processus entreprise
-            </span>
-            <h2 className="font-sora text-3xl md:text-4xl font-extrabold text-slate-900 mb-6 tracking-tight">
-              Comment fonctionne l'analyse et la demande avec EuroTax Refund ?
-            </h2>
-            <p className="text-slate-600 leading-relaxed font-medium">
-              Une prise en charge complète pour décharger vos équipes comptables de démarches chronophages.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="p-8 rounded-3xl border border-slate-200 bg-white hover:border-brand-300 transition-all">
-              <div className="w-12 h-12 bg-brand-50 text-brand-600 rounded-2xl flex items-center justify-center font-black text-xl mb-6">
-                1
-              </div>
-              <h3 className="font-sora text-lg font-bold text-slate-900 mb-3 tracking-tight">
-                Audit des factures & contrôle de conformité
-              </h3>
-              <p className="text-slate-600 text-sm leading-relaxed">
-                Nous examinons vos justificatifs de dépenses pour vérifier les mentions légales requises (numéros de TVA intracommunautaire, montants HT/TTC).
-              </p>
-            </div>
-
-            <div className="p-8 rounded-3xl border border-slate-200 bg-white hover:border-brand-300 transition-all">
-              <div className="w-12 h-12 bg-gold-50 text-gold-600 rounded-2xl flex items-center justify-center font-black text-xl mb-6">
-                2
-              </div>
-              <h3 className="font-sora text-lg font-bold text-slate-900 mb-3 tracking-tight">
-                Calcul de la TVA récupérable par pays
-              </h3>
-              <p className="text-slate-600 text-sm leading-relaxed">
-                Nous ventilons les montants déductibles par État membre et appliquons les règles d'exclusion spécifiques à chaque juridiction fiscale.
-              </p>
-            </div>
-
-            <div className="p-8 rounded-3xl border border-slate-200 bg-white hover:border-brand-300 transition-all">
-              <div className="w-12 h-12 bg-slate-950 text-white rounded-2xl flex items-center justify-center font-black text-xl mb-6">
-                3
-              </div>
-              <h3 className="font-sora text-lg font-bold text-slate-900 mb-3 tracking-tight">
-                Préparation et suivi du remboursement
-              </h3>
-              <p className="text-slate-600 text-sm leading-relaxed">
-                Nous préparons le dossier complet et suivons son instruction jusqu'au versement direct des fonds sur le compte bancaire de votre entreprise.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 5 : ENTREPRISES ÉLIGIBLES */}
-      <section className="py-20 bg-slate-50 relative overflow-hidden border-t border-slate-100">
-        <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="max-w-3xl mb-16">
-            <span className="text-xs font-bold uppercase tracking-widest text-brand-600 bg-brand-50 px-3 py-1 rounded-full inline-block mb-4 border border-brand-100">
-              Structures concernées
-            </span>
-            <h2 className="font-sora text-3xl md:text-4xl font-extrabold text-slate-900 mb-6 tracking-tight">
-              Quelles entreprises sont éligibles à la récupération de TVA en Europe ?
-            </h2>
-            <p className="text-slate-600 leading-relaxed font-medium">
-              Le service est accessible aux professionnels assujettis à la TVA quel que soit leur secteur d'activité.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-3xl border border-slate-200">
-              <div className="w-10 h-10 bg-brand-50 text-brand-600 rounded-xl flex items-center justify-center mb-6">
-                <IconBuilding size={20} />
-              </div>
-              <h3 className="font-sora text-lg font-bold text-slate-900 mb-3 tracking-tight">
-                PME, TPE & ETI françaises
-              </h3>
-              <p className="text-slate-600 text-xs leading-relaxed font-medium">
-                Sociétés développant des flux commerciaux ou des partenariats en Europe souhaitant optimiser leur trésorerie sans alourdir leur service comptable.
-              </p>
-            </div>
-
-            <div className="bg-white p-8 rounded-3xl border border-slate-200">
-              <div className="w-10 h-10 bg-gold-50 text-gold-600 rounded-xl flex items-center justify-center mb-6">
-                <IconOffice size={20} />
-              </div>
-              <h3 className="font-sora text-lg font-bold text-slate-900 mb-3 tracking-tight">
-                Sociétés étrangères opérant en France
-              </h3>
-              <p className="text-slate-600 text-xs leading-relaxed font-medium">
-                Entreprises européennes ou internationales ayant supporté de la TVA française lors de projets ou missions temporaires sur le sol français.
-              </p>
-            </div>
-
-            <div className="bg-white p-8 rounded-3xl border border-slate-200">
-              <div className="w-10 h-10 bg-slate-950 text-white rounded-xl flex items-center justify-center mb-6">
-                <IconBriefcase size={20} />
-              </div>
-              <h3 className="font-sora text-lg font-bold text-slate-900 mb-3 tracking-tight">
-                Professions libérales & consultants
-              </h3>
-              <p className="text-slate-600 text-xs leading-relaxed font-medium">
-                Experts et prestataires indépendants réalisant des missions régulières dans plusieurs pays membres de l'Union Européenne.
+                Nous auditons vos pièces comptables pour valider leur conformité avec les exigences de chaque administration fiscale européenne avant tout dépôt officiel.
               </p>
             </div>
           </div>
@@ -458,52 +178,46 @@ export default function RecuperationTvaEntreprise() {
         <div className="max-w-4xl mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
             <span className="text-xs font-bold uppercase tracking-widest text-brand-600 bg-brand-50 px-3 py-1 rounded-full inline-block mb-4 border border-brand-100">
-              FAQ TVA professionnelle
+              FAQ Entreprise
             </span>
             <h2 className="font-sora text-3xl md:text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
-              Questions fréquentes sur la récupération de TVA pour les entreprises
+              Questions fréquentes sur la récupération de TVA en Belgique et en Europe
             </h2>
             <p className="text-slate-600 text-sm font-medium">
-              Tout ce que vous devez savoir pour récupérer la TVA de votre entreprise.
+              Optimisez votre trésorerie d'entreprise sans complexité administrative.
             </p>
           </div>
 
-          <div className="space-y-4 mb-14" role="region" aria-label="Questions fréquentes sur la récupération de TVA pour les entreprises">
+          <div className="space-y-4 mb-14">
             {FAQ_ITEMS.map((item, i) => {
               const isOpen = openFaq === i
               return (
                 <div
                   key={item.id}
-                  className={`border rounded-3xl transition-all duration-300 bg-white overflow-hidden ${isOpen ? 'border-brand-300 shadow-md shadow-brand-500/5' : 'border-slate-200 hover:border-slate-300'
-                    }`}
+                  className={`border rounded-3xl transition-all duration-300 bg-white overflow-hidden ${
+                    isOpen ? 'border-brand-300 shadow-md shadow-brand-500/5' : 'border-slate-200 hover:border-slate-300'
+                  }`}
                 >
                   <button
                     type="button"
                     onClick={() => setOpenFaq(isOpen ? null : i)}
                     aria-expanded={isOpen}
-                    aria-controls={`faq-answer-${item.id}`}
-                    id={`faq-question-${item.id}`}
-                    className="w-full text-left p-6 sm:p-7 flex justify-between items-center gap-4 transition-colors group focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 rounded-3xl"
+                    className="w-full text-left p-6 sm:p-7 flex justify-between items-center gap-4 transition-colors group focus:outline-none rounded-3xl"
                   >
                     <span className="font-sora text-base sm:text-lg font-bold text-slate-900 group-hover:text-brand-600 transition-colors tracking-tight">
                       {item.q}
                     </span>
                     <span
-                      className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 transition-all ${isOpen ? 'bg-brand-600 text-white rotate-180' : 'bg-slate-100 text-slate-500 group-hover:bg-brand-50 group-hover:text-brand-600'
-                        }`}
-                      aria-hidden="true"
+                      className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0 transition-all ${
+                        isOpen ? 'bg-brand-600 text-white rotate-180' : 'bg-slate-100 text-slate-500 group-hover:bg-brand-50 group-hover:text-brand-600'
+                      }`}
                     >
                       {isOpen ? '−' : '+'}
                     </span>
                   </button>
 
                   {isOpen && (
-                    <div
-                      id={`faq-answer-${item.id}`}
-                      role="region"
-                      aria-labelledby={`faq-question-${item.id}`}
-                      className="px-6 sm:px-7 pb-7 pt-2 text-slate-600 text-sm leading-relaxed border-t border-slate-100 font-medium animate-fadeIn"
-                    >
+                    <div className="px-6 sm:px-7 pb-7 pt-2 text-slate-600 text-sm leading-relaxed border-t border-slate-100 font-medium animate-fadeIn">
                       <p>{item.a}</p>
                     </div>
                   )}
@@ -512,7 +226,6 @@ export default function RecuperationTvaEntreprise() {
             })}
           </div>
 
-          {/* CTA discret */}
           <div className="p-8 sm:p-10 bg-slate-50 rounded-4xl border border-slate-200 text-center flex flex-col sm:flex-row items-center justify-between gap-6">
             <div className="text-left max-w-md">
               <h3 className="font-sora text-lg font-bold text-slate-900 mb-1 tracking-tight">
@@ -526,13 +239,13 @@ export default function RecuperationTvaEntreprise() {
               to="/form"
               className="px-8 py-3.5 bg-brand-600 hover:bg-brand-500 text-white text-sm font-bold rounded-full transition-all whitespace-nowrap shadow-md shadow-brand-600/20 hover:shadow-brand-600/30"
             >
-              Vérifier mon éligibilité entreprise →
+              Démarrer ma demande →
             </Link>
           </div>
         </div>
       </section>
 
-      {/* MAILLAGE INTERNE VERS AUTRES SERVICES */}
+      {/* MAILLAGE INTERNE */}
       <section className="py-16 bg-slate-50 border-t border-slate-200">
         <div className="max-w-7xl mx-auto px-6 text-center">
           <p className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-6">
@@ -543,7 +256,7 @@ export default function RecuperationTvaEntreprise() {
               to="/remboursement-impot-france"
               className="px-6 py-3 bg-white border border-slate-200 hover:border-brand-400 rounded-full text-sm font-bold text-slate-800 hover:text-brand-600 transition-all shadow-sm"
             >
-              Remboursement d'impôt en France →
+              Remboursement d'impôt en Belgique et en Europe →
             </Link>
             <Link
               to="/remboursement-impot-expatrie"
@@ -568,7 +281,7 @@ export default function RecuperationTvaEntreprise() {
             to="/form"
             className="inline-flex px-10 py-5 bg-white hover:bg-slate-100 text-brand-600 font-black rounded-full shadow-2xl shadow-brand-500/20 transition-all hover:-translate-y-1 hover:scale-105"
           >
-            Vérifier mon éligibilité entreprise →
+            Démarrer ma demande de remboursement →
           </Link>
         </div>
       </section>
